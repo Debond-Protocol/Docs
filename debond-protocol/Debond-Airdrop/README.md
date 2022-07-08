@@ -8,7 +8,7 @@
 
 
 
-##  strucures: 
+## Structs: 
 
 
 we use only `mapping(address => bool) public withdrawClaimed` to check whether then addresses which are included in the signature verification offchain have recovered their amt of claim tokens once and for all.
