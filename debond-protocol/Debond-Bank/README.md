@@ -3,7 +3,7 @@
 This repository consist of the contracts  that manage the issuance and  redemption of bonds and interfacing with the APM to permit addition/subtraction of the liquidity respectively, thus being the core part of protocol that  interfaces with Bonds contract.
 
 
-## Contracts
+## Contracts: 
 1.  Bank Contract :   This contract acts as custodian of bonds by allowing buy/stake bonds with their collaterals being  ERC20 (DBIT/DGOV or other whitelisted tokens)/WETH . Only the class of bonds that are agreed upon by the governance can be issued by the functions of the contract.  Bonds are instantiated into different class  based upon the underlying collateral, nature of issuance/ redemption condition (fixed/floating rate bonds). 
 
 
@@ -17,11 +17,11 @@ This repository consist of the contracts  that manage the issuance and  redempti
     // other structures for finding the average liquidity and other parameters. 
 
     //classIdsPerTokenAddress(ERC20 => associated classIds)....etc
-
 ```
 
 ## Workflow:
-    1. first User / external contract selects the type of bond that is to be purchased by two types:
+
+    1. First User / external contract selects the type of bond that is to be purchased by two types:
         - Staking bonds allows users to earn principal interest in the form of DBIT at the time of issuance of the bonds.   user puts some amount of  WETH/ERC20 collateral to get similar amount of ERC20-Bonds and  some part of  DBIT
             - DBIT  that need to be minted is determined by the ([CDP formula value in USD]() * rateOfInterest).
             - and the given collateral is added into APM via APMRouter.
@@ -63,19 +63,12 @@ This repository consist of the contracts  that manage the issuance and  redempti
 
 - Insure that bank contract has addresses for governance and APM correctly set else it might cause loss of the  underlying liquidity as bonds. 
 
-
-
-## diagram (UML)
-
-![](docs/Debond-Bank.svg)
-
-
 ### running the test.
 
 ```bash
 > npm install  
 
-> npx truffle compile / truffle compile. 
+> npx truffle compile
 
 
 > npm run generate-types # for tests in typescript.
@@ -87,11 +80,27 @@ This repository consist of the contracts  that manage the issuance and  redempti
 > npx truffle run test
 
 ```
+### Deployment test: 
+
+1. Add the deployment address key in .env with the RPC .
+
+2. deployment of the contract on the given chain:
+
+```bash
+> truffle compile 
+
+> truffle deploy 
+```
+
+3. And then trigger the function `setBankAddress()` from    which will be initializing the bank contracts across other contracts in the Debond contracts. 
+
 
 ## inheritance diagram: 
 
 
 [bank contracts dependencies general diagram](./docs/BankContracts.png).
+
+[Bank functions overview](./docs/BankFunctions.svg).
 
 ## Deployed contracts: 
 
