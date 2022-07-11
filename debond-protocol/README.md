@@ -7,20 +7,10 @@ On higher level, Debond protocol provides the setup for issuance of  EIP-3475 co
 
 ## Overall architecture:
 
-//TODO:
-## [Diagram](https://miro.com/app/board/uXjVOQsK09c=/?moveToWidget=3458764519928245265&cot=14):
-
-![]
+## [Diagram in Miro](https://miro.com/app/board/uXjVOQsK09c=/?moveToWidget=3458764519928245265&cot=14):
 
 
 
 
 
 
-
-## Description: 
-
-1. 
-
-
-1. [Debond-Airdrop](): 
