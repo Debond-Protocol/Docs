@@ -66,14 +66,12 @@ This repository consist of the contracts  that manage the issuance and  redempti
 ### running the test.
 
 ```bash
-> npm install  
+> npm install  @debond/bank
 
 > npx truffle compile
 
-
 > npm run generate-types # for tests in typescript.
-
-## and  finally running tyhe command in parallel.
+## and  finally running the command in parallel.
 
 > npx run ganache -p 7545 
 &&

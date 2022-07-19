@@ -1,17 +1,16 @@
 # Debond-Airdrop: 
 
+
+## About
 - This repo consist of Airdrop contract that allows to  allot the fixed airdropSupply of DBIT/DGOV tokens to the whitelisted users with fixed quantity. Its offchain computation of merkle proof but, thus being scalable  to virtually till  type(uint256).  we use the following [implementation](https://medium.com/@PhABC/off-chain-whitelist-with-on-chain-verification-for-ethereum-smart-contracts-1563ca4b8f11).
 
 - if the address is verified, it can claim whole amount of DBIT/DGOV tokens by calling the function from DeBond-Token.
 
 - Overall `_airdropSupply` (and allocation) of the AirdropToken can only be  be changed by governance.
 
-
-
 ## Structs: 
 
-
-we use only `mapping(address => bool) public withdrawClaimed` to check whether then addresses which are included in the signature verification offchain have recovered their amt of claim tokens once and for all.
+We use only `mapping(address => bool) public withdrawClaimed` to check whether then addresses which are included in the signature verification offchain have recovered their amt of claim tokens once and for all.
 
 ## Deployment steps: 
 ```bash
