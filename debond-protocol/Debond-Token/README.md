@@ -1,16 +1,19 @@
-
+# Debond-Token
 
 As explained in the  whitepaper, the debond protocol  consists of two types of tokens
-DBIT: 
-This represents an un-capped supply token that acts as the utility token for the protocol. all the interest from the primary  and secondary markets will be transferred via the given results and thus here we can get better 
+
+1. DBIT: 
+  - This represents an un-capped supply token that acts as the utility token for the protocol. all the interest from the primary  and secondary markets will be transferred via the given results and thus here we can get better 
+
 DBIT token has 3 types of supply :
-Collateralized Supply: This total supply is equal to the CDP quantity of the bonds issued (either via the staking/buying process). the price is defined by the following formula: 
-                                    
-Where  S(total) is the minted bonds during the issuance process. 
-Allocated Supply: This is the total supply corresponding to all addresses that are contributors in the d/bond-protocol (as core team developers and community participants recognized by the governance ) and has tokens that can be minted by the team members only after passing the proposal. Also, we will be using mechanisms like vesting in order to ensure the transparency of tokenomics. for more about the functions used, check debond-governance.
-Airdropped Supply: This total supply is reserved for the community members whose addresses are allocated the tokens. based on the given time period, the user can mint this token which will then be added to the Airdropped Supply. 
+  - Collateralized Supply: This total supply is equal to the CDP quantity of the bonds issued (either via the staking/buying process). 
+  - Allocated Supply: This is the total supply corresponding to all addresses that are contributors in the d/bond-protocol (as core team developers and community participants recognized by the governance ) and has tokens that can be minted by the team members only after passing the proposal. Also, we will be using mechanisms like vesting in order to ensure the transparency of tokenomics. for more about the functions used, check debond-governance.
+
+  - Airdropped Supply: This total supply is reserved for the community members whose addresses are allocated the tokens. based on the given time period, the user can mint this token which will then be added to the Airdropped Supply. 
+
 Also, there is another supply (that is not separately monitored ) called as lockedSupply that is checked for a given address in order to determine how many of the given collateralized supply are being locked at the same time as the creation of the bonds (and thus are "virtually locked" in the liquidity pool).
 the formula is  defined  as follows: 
+```solidity
 function getLockedBalance(address account)
         public
         view
@@ -30,10 +33,13 @@ function getLockedBalance(address account)
         }
         return _lockedBalance;
     }
+```
+
 2. DGOV tokens: 
  These are governance tokens for allowing holders to add proposals in the debond governance for protocol upgradation and decisions related to the treasury, as well as participating in the voting process, by staking the DGOV tokens(more information is defined in the Debond-governance). it uses all the underlying functions of the debondToken, except being limited in the maximum in the defined supply.
 
-Contracts:
+## Contracts:
+```solidity
 DebondToken.sol : The common implementation interface for minting and supply getter/ setter functions for DBIT/DGOV tokens. 
 pragma solidity ^0.8.9;
 
@@ -107,17 +113,20 @@ interface IDebondToken {
     
     function setExchangeAddress(address _exchangeAddress) external;   
 }
-2. DGOV.sol:  it inherits most of the methods from DebondToken except for the modifiers  that check the condition of unlocking supply (i.e mintCollateralisedSupply ), transfer functions and eventually 
-3. DBIT.sol: it also inherits the interface from the DebondToken with the uncapped supply.
-Installation: 
+}
+```
+
+## Installation: 
 $ npm install @debond/Token.
 
 Integration Steps : 
-First insure you have defined the bank address and other roles for the smart contract . this 
+First insure you have defined the bank address and other roles for the smart contract .
 
+```solidity
 import "@debond/token/contracts/IDebondToken.sol";
 
 
 contract demoToken is IDebondToken {
 .......
 }
+```
