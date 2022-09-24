@@ -10,4 +10,4 @@ This repository includes the documents describing the public information about d
 - [Tech Presentation](https://github.com/Debond-Protocol/Docs/blob/main/Tech%20presentation.pdf)
 - [D/NFT Presentation](https://github.com/Debond-Protocol/Docs/blob/main/D_NFT%20Introduction.pdf)
 - [Gitbook documentation](https://dhruv-malik-1.gitbook.io/overview/smart-contract-packages/debond-loan). the documents in the `docs/` are outdated but will be updated soon.
-- [whitepaper](./DEBOND_Whitepaper_v1.pdf)
+- [Whitepaper](./DEBOND_Whitepaper_v1.pdf)
