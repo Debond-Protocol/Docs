@@ -1,10 +1,9 @@
-name: 'gitbook action for publishing new link for added marketing documents'
+name: 'gitbook action for publishing new link on readme for each new addition'
 
 on:
   push:
     branches:
       - master
-      - temp-branch
 
 jobs:
   build:
@@ -13,22 +12,15 @@ jobs:
     - name: Checkout action
       uses: actions/checkout@v3
     
+    - name: "segment files seperately when uploaded"
+        uses: varunsridharan/action-dynamic-readme@main
+        with:
+          global_template_repository: Debond-protocols/docs
+          files: |
+            README.md
+            **.md=docs/**.md
 
-
-    - name: Gitbook Action
-      uses: zanderzhao/gitbook-action@v1.2.4 # https://github.com/ZanderZhao/gitbook-action/releases 
-      with:                                # Just example, click above, use latest please 
-        token: ${{ secrets.PERSONAL_TOKEN }}
-
-      ## now detect last edited files and store them into the pages as standardised names
-      run: |
-          CHANGED_FILES = $(git show --name-only --oneline HEAD) 
-          ( for i in ""${CHANGED_FILES[@]}"; 
-          do 
-            mv `${CHANGED_FILES[i]}` `${CHANGED_FILES[i]_current_version}`
-          done
-          )
-
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
