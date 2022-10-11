@@ -7,6 +7,7 @@ This repository includes the documents describing the public information about d
 - [Bond issuer Pitch-deck](https://github.com/Debond-Protocol/Docs/blob/main/Bond%20issueing%20Pitch%20Deck_D_Bond.pdf)
 - [Web2 business Pitch-deck](https://github.com/Debond-Protocol/Docs/blob/main/web2%20(B2B)%20Pitch%20Deck_D_Bond.pdf)
 - [Web3 business Pitch-deck](https://github.com/Debond-Protocol/Docs/blob/main/web3%20(B2B)%20Pitch%20Deck_D_Bond.pdf)
+- [Our KYC solution](https://github.com/Debond-Protocol/Docs/blob/main/D-id%20Pitch%20Deck_D_Bond.pdf) 
 - [Investment Pitch-deck](https://github.com/Debond-Protocol/Docs/blob/main/Investment%20Pitch%20Deck_D_Bond.pdf)
 - [Tech Presentation](https://github.com/Debond-Protocol/Docs/blob/main/Tech%20presentation.pdf)
 - [D/NFT Presentation](https://github.com/Debond-Protocol/Docs/blob/main/D_NFT%20Introduction.pdf)
